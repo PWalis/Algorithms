@@ -3,8 +3,11 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
-
+  dif_list = []
+  for subtract in range(len(prices)):
+    for price in prices[subtract+1:]:
+      dif_list.append(price - prices[subtract])
+  return max(dif_list)
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
